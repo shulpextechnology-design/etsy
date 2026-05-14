@@ -96,13 +96,16 @@ nav .container {
 }
 
 .btn {
-    padding: 0.8rem 1.8rem;
+    display: inline-block;
+    padding: 0.8rem 2.2rem;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     border: none;
     font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: center;
 }
 
 .btn-primary {
@@ -125,6 +128,17 @@ nav .container {
 .btn-outline:hover {
     background: var(--secondary);
     color: var(--white);
+}
+
+.btn-white {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 /* Hero Section */
@@ -645,6 +659,8 @@ footer {
     .btn {
         width: 100%;
         text-align: center;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
     }
 
     .hero-content div {
