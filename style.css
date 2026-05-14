@@ -345,22 +345,73 @@ nav .container {
     transform: translateY(-50%) translateX(0);
 }
 
-/* Trust Bar */
+/* Trust Bar Infinite Scroll */
 .trust-bar {
     background: #fff;
     padding: 3rem 0;
+    overflow: hidden;
     border-top: 1px solid rgba(0,0,0,0.05);
     border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: relative;
 }
 
-.trust-flex {
+.trust-bar::before, .trust-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.trust-bar::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent);
+}
+
+.trust-bar::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent);
+}
+
+.trust-track {
     display: flex;
-    justify-content: space-between;
+    gap: 5rem;
+    width: max-content;
+    animation: scroll 30s linear infinite;
     align-items: center;
-    opacity: 0.6;
-    filter: grayscale(1);
-    flex-wrap: wrap;
-    gap: 2rem;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.trust-item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    opacity: 0.4;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.trust-item:hover {
+    opacity: 0.8;
+    color: var(--primary);
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Pricing Section Redesign */
