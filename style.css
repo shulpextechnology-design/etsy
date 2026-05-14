@@ -244,6 +244,76 @@ nav .container {
     font-size: 1.4rem;
 }
 
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+.shop-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .shop-icon {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.shop-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--secondary);
+}
+
+.shop-info span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.visit-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) translateX(20px);
+    opacity: 0;
+    width: 18px;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .visit-icon {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
 /* Trust Bar */
 .trust-bar {
     background: #fff;
